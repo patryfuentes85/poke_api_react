@@ -54,11 +54,11 @@ class Pokelist extends Component {
     render() {
         console.log('RENDER')
         return (
-            <div>
+            <div className='list_cards'>
                 <h1>Lista Pokemon</h1>
                 {
                   this.state.pokeLista.map(pokemon => 
-                    <Card>
+                    <Card sx={{ width: 500, margin:1.2 }}>
                     <Fragment key={pokemon.name} >
                         <a href={pokemon.url} alt={pokemon.name + 'image'}> {pokemon.name} </a>
                         <p>{pokemon.url}</p>
@@ -66,9 +66,6 @@ class Pokelist extends Component {
                     </Card>
                   )
                 }
-                <button onClick={this.handlerLoadPokemons}>Load Pokemons</button>
-                <button onClick={this.handlerResetPokemons}>Reset Pokemons</button>
-                <button onClick={this.handlerUpdate}>Force Update</button>
             </div>        
         );
     }

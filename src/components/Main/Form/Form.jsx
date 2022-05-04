@@ -5,6 +5,7 @@ const Form = () => {
 
   const [pokemon, setPokemon] = useState([]); // guardo los datos 
 
+  try {
     useEffect(() => {
       const getPoke = async () => {
         const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/`);
@@ -26,7 +27,7 @@ const Form = () => {
       setPokemon(data);
     };
 
-    const painting = () => 
+    const paintPokemons = () => 
     pokemon.results.map((item, i) => (
       <Card data={item} key={i} img={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i+1}.png`} />
     ));
@@ -37,21 +38,24 @@ const Form = () => {
       <h4>Find your Pokemon:</h4>
         <form onSubmit={getName}>
           <label htmlFor="name">Pokemon:</label>
-          <input name="name" type="text" placeholder="search your pokemon"></input>
+          <input name="name" type="text" placeholder="...ditto"></input>
         </form>
         
         {!pokemon.abilities
-        ?(painting())
+        ?(paintPokemons())
         :(
         <div>
-        <h2>Name:{pokemon.name}</h2>
+        <h2>Pokemon Name:{pokemon.name}</h2>
         <h3>Type:{pokemon.types[0].type.name}</h3>
-        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt="" />
+        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt="pokemon" />
         </div>
         )}
       
       </>
     );
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 export default Form;
