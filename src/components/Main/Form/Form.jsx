@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import Card from '@mui/material/Card';
 
 const Form = () => {
-  const [pokemon, setPokemon] = useState([]);
-  const [pokSelect, setPokSelect] = useState([]);
-  try {
+
+  const [pokemon, setPokemon] = useState([]); // guardo los datos 
+
     useEffect(() => {
       const getPoke = async () => {
         const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/`);
@@ -14,48 +14,44 @@ const Form = () => {
       getPoke();
     }, []);
     
-
-    const getName = async (e) => {
-      e.preventDefault();
-      const name = e.target.name.value;
+    /// funcion para guardar el valor del pokemon que buscamos
+    const getName = async (event) => {
+      event.preventDefault();
+      const name = event.target.name.value;
       console.log(name);
       const resp = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${e.target.name.value}`
+        `https://pokeapi.co/api/v2/pokemon/${event.target.name.value}`
       );
       const data = await resp.json();
-      setPokSelect([...pokSelect, data]);
       setPokemon(data);
     };
 
-    const paintPokemons = () => 
+    const painting = () => 
     pokemon.results.map((item, i) => (
-      <Card data={item} key={i} foto={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i+1}.png`} />
+      <Card data={item} key={i} img={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i+1}.png`} />
     ));
 
 
     return (
       <>
-      <p>Find your Pokemon:</p>
+      <h4>Find your Pokemon:</h4>
         <form onSubmit={getName}>
           <label htmlFor="name">Pokemon:</label>
           <input name="name" type="text" placeholder="search your pokemon"></input>
-          <button>Search</button>
         </form>
         
         {!pokemon.abilities
-        ?(paintPokemons())
+        ?(painting())
         :(
-          <article>
-        <h2>{pokemon.name} - {pokemon.types[0].type.name}</h2>
+        <div>
+        <h2>Name:{pokemon.name}</h2>
+        <h3>Type:{pokemon.types[0].type.name}</h3>
         <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt="" />
-        </article>
+        </div>
         )}
       
       </>
     );
-  } catch (e) {
-    console.log(e);
-  }
 };
 
 export default Form;

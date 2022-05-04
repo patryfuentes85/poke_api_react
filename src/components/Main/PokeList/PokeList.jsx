@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import Card from '@mui/material/Card';
 
+
 class Pokelist extends Component {
     constructor(props) {
         super(props);
