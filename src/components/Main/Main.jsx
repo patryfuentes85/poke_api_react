@@ -2,7 +2,7 @@ import React from 'react';
 import Form from './Form/Form';
 import PokeList from './PokeList/PokeList';
 import Home from './Home/Home';
-import Card from './Card/Card';
+import Cards from './Cards/Cards';
 import PokeCreate from './PokeCreate/PokeCreate'
 import { Route, Routes } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ const Main = () => {
         <Route path='/list' element={<PokeList/>}/>
         <Route path='/find' element={<Form/>}/>
         <Route path='/createPoke' element={<PokeCreate/>}/>
-        <Route path='/card' element={<Card/>}/>
+        <Route path='/card' element={<Cards/>}/>
       </Routes>
     </main>;
 };      
