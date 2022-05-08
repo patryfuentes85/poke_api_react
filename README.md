@@ -1,5 +1,7 @@
 # EJERCICIO: PokeApp con React Funcional (I)
 
+![POKEMON](https://tecnogeek.net/wp-content/uploads/2016/07/Pokemon-GO.jpg)
+
 ## Pokeapi 
 - En este ejercicio trabajaremos con React funcional y haremos uso de los Hooks useState() y useEffect()
 - En este ejercicio tendréis que jugar con la Pokeapi. Se dividirá en los siguientes pasos:
