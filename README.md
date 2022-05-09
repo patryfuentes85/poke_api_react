@@ -2,7 +2,7 @@
 
 ![POKEMON](https://tecnogeek.net/wp-content/uploads/2016/07/Pokemon-GO.jpg)
 
-![POKEMON](https://luxury-duckanoo-7c0ac2.netlify.app)
+Visitar [PokeApp](https://luxury-duckanoo-7c0ac2.netlify.app).
 
 ## Pokeapi 
 - En este ejercicio trabajaremos con React funcional y haremos uso de los Hooks useState() y useEffect()
