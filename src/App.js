@@ -44,6 +44,7 @@ function App() {
     }
   }
     fetchData();
+     // eslint-disable-next-line
   }, [pokemon]);
 
   const handleSubmit = e => {
