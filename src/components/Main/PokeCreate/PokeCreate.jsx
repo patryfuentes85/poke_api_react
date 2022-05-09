@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import {pokemonContext} from '../../../context/pokemonContext';
 import {useForm} from 'react-hook-form';
 import MenuItem from '@mui/material/MenuItem';
@@ -9,8 +9,7 @@ import Button from '@mui/material/Button';
 function PokeCreate() {
 
   const {pokemonList, setPoke, setPokemonList} = useContext(pokemonContext);
-  const { register, formState: { errors } } = useForm();   
-/*   const [value, setValue] = useState(''); */
+  const { register, formState: { } } = useForm();   
 
   
 
