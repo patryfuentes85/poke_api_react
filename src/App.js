@@ -20,7 +20,7 @@ function App() {
   async function fetchData() {
     try{
       if (pokemon !== '') {
-      console.log('hola', pokemon);
+    
       // Petición HTTP
       const resp = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
       const data = resp.data;

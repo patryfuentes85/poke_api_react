@@ -3,8 +3,6 @@ import { Card, CardMedia } from '@mui/material';
 
 function Cards(props) {
 
-console.log('esto es lo que me traen los props', props.value)
-
   return (
             <Card sx={{ width: 200, margin:1 }}>
            <CardMedia component="img" width="50" image={props.value.img} alt="img"/>
