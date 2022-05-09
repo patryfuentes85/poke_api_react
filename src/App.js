@@ -49,14 +49,8 @@ function App() {
   const handleSubmit = e => {
     e.preventDefault();
     const poke = e.target.pokemon.value;
-    console.log(poke)
     setPokemon(poke) // Modificando el estado de Value
   };
-
-
-
-
-
 
 
   //login
@@ -71,22 +65,13 @@ function App() {
     setUser("");
   }
 
-  const createPokemon = async (data) => {
-    const newPokemon = {
-      name: data.name,
-      id: data.id,
-      image: data.url,
-      type1: data.type1,
-      type2: data.type2,
-      weight: data.weight
-    }
-    setPoke(newPokemon); 
-    setPokemonList([...pokemonList,newPokemon]);
-  }
 
   const dataPok = {
-    createPokemon,
-    poke
+    poke,
+    pokemonList,
+    setPoke,
+    setPokemonList,
+    handleSubmit
   }
 
 
@@ -94,9 +79,7 @@ function App() {
     user,
     login,
     logout,
-    handleSubmit,
-    pokemonList
-
+  
   }
 
 
