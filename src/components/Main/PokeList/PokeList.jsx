@@ -57,9 +57,9 @@ class Pokelist extends Component {
             <div className='list_cards'>
                 <h1>Lista Pokemon</h1>
                 {
-                  this.state.pokeLista.map(pokemon => 
+                  this.state.pokeLista.map((pokemon, i) => 
                     <Card sx={{ width: 500, margin:1.2 }}>
-                    <Fragment key={pokemon.name} >
+                    <Fragment key={i} >
                         <a href={pokemon.url} alt={pokemon.name + 'image'}> {pokemon.name} </a>
                         <p>{pokemon.url}</p>
                     </Fragment>
