@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import Cards from '../Cards';
-import {userContext} from '../../../context/userContext'
+import {pokemonContext} from '../../../context/pokemonContext';
 
 
 const Form = () => {
   
-  const {pokemonList, handleSubmit} = useContext(userContext);
+  const {pokemonList, handleSubmit} = useContext(pokemonContext);
 
   return    <section>
               <h1>Find your Pokemon !!</h1>
