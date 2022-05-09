@@ -9,9 +9,7 @@ import Button from '@mui/material/Button';
 function PokeCreate() {
 
   const {pokemonList, setPoke, setPokemonList} = useContext(pokemonContext);
-  const { register, formState: { } } = useForm();   
-
-  
+  const { register } = useForm();
 
   const createPokemon = (e) => {
     e.preventDefault();
